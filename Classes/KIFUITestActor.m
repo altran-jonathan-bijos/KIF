@@ -869,6 +869,7 @@ static BOOL KIFUITestActorAnimationsEnabled = YES;
     [self setSwitch:switchView element:element On:switchIsOn];
 }
 
+#if TARGET_OS_IOS
 - (void)setSwitch:(UISwitch *)switchView element:(UIAccessibilityElement *)element On:(BOOL)switchIsOn
 {
     // No need to switch it if it's already in the correct position
@@ -930,6 +931,7 @@ static BOOL KIFUITestActorAnimationsEnabled = YES;
 
     [slider dragFromPoint:currentPosition toPoint:finalPosition steps:10];
 }
+#endif
 
 - (void)dismissPopover
 {

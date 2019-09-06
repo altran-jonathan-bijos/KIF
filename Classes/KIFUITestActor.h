@@ -483,6 +483,7 @@ typedef NS_ENUM(NSUInteger, KIFPullToRefreshTiming) {
  */
 - (void)setOn:(BOOL)switchIsOn forSwitchWithAccessibilityLabel:(NSString *)label;
 
+#if TARGET_OS_IOS
 /*!
  @abstract Toggles a UISwitch into a specified position.
  @discussion If the Switch isn't currently tappable, then the step will attempt to wait until it is. Once the view is present, the step will return if it's already in the desired position. If the switch is tappable but not in the desired position, a tap event is simulated in the center of the view or element, toggling the switch into the desired position.
@@ -501,6 +502,7 @@ typedef NS_ENUM(NSUInteger, KIFPullToRefreshTiming) {
  */
 - (void)setValue:(float)value forSliderWithAccessibilityLabel:(NSString *)label;
 - (void)setValue:(float)value forSlider:(UISlider *)slider;
+#endif
 
 /*!
  @abstract Dismisses a popover on screen.
