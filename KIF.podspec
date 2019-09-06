@@ -6,7 +6,8 @@ Pod::Spec.new do |s|
   s.license                 = 'Apache 2.0'
   s.authors                 = 'Michael Thole', 'Eric Firestone', 'Jim Puls', 'Brian Nickel'
   s.source                  = { :git => "https://github.com/kif-framework/KIF.git", :tag => "v#{ s.version.to_s }" }
-  s.platform                = :ios, '8.0'
+  s.ios.deployment_target = '8.0'
+  s.tvos.deployment_target = '11.0'
   s.frameworks              = 'CoreGraphics', 'QuartzCore', 'IOKit', 'XCTest'
   s.default_subspec         = 'Core'
   s.requires_arc            = true
