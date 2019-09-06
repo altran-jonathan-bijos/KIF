@@ -80,7 +80,7 @@ NS_INLINE BOOL StringsMatchExceptLineBreaks(NSString *expected, NSString *actual
     static NSSet *classesToSkip;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        #if TARGET_OS_IPHONE
+        #if TARGET_OS_IOS
         // UIDatePicker contains hundreds of thousands of placeholder accessibility elements that aren't useful to KIF,
         // so don't recurse into a date picker when searching for matching accessibility elements
         classesToSkip = [[NSSet alloc] initWithObjects:[UIDatePicker class], nil];
@@ -460,7 +460,7 @@ NS_INLINE BOOL StringsMatchExceptLineBreaks(NSString *expected, NSString *actual
     // when this was added, but we now do. It needs to be tested before we can get rid of it.
     id /*UIWebBrowserView*/ webBrowserView = nil;
     
-    #if TARGET_OS_IPHONE
+    #if TARGET_OS_IOS
     if ([NSStringFromClass([self class]) isEqual:@"UIWebBrowserView"]) {
         webBrowserView = self;
     } else if ([self isKindOfClass:[UIWebView class]]) {
